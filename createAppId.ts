@@ -23,6 +23,17 @@ const main = async () => {
       console.log(`Transaction was not executed`)
       process.exit(1)
     }
+    const e = txResult.events.find((e) => e.event.method == "ApplicationKeyCreated")
+    if (e == undefined) {
+      console.log(`Missing ApplicationKeyCreated method.`)
+      process.exit(1)
+    }
+    const data: any = e.event.data
+    console.log(`
+      key=${data["key"].toString()},
+      owner=${data["owner"].toString()},
+      id=${data["id"].toString()},
+    `)
     process.exit(0)
   } catch (err) {
     console.error(err)

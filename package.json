@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "hello-world": "ts-node helloworld.ts"
+    "hello-world": "ts-node helloworld.ts",
+    "create-app-id": "ts-node createAppId.ts"
   },
   "keywords": [],
   "author": "",
